@@ -21,20 +21,20 @@ public class Rook extends ChessPiece {
         Position p = new Position(0, 0);
 
         // acima
-        p.setValues(position.getRows() + 1, position.getColumns());
+        p.setValues(position.getRows() - 1, position.getColumns());
         while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)){
             mat[p.getRows()][p.getColumns()] = true;
-            p.setRows(p.getRows() + 1);
+            p.setRows(p.getRows() - 1);
         }
         if(getBoard().positionExists(p) && isThereOpponentPiece(p)){
             mat[p.getRows()][p.getColumns()] = true;
         }
 
         // abaixo
-        p.setValues(position.getRows() - 1, position.getColumns());
+        p.setValues(position.getRows() + 1, position.getColumns());
         while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)){
             mat[p.getRows()][p.getColumns()] = true;
-            p.setRows(p.getRows() - 1);
+            p.setRows(p.getRows() + 1);
         }
         if(getBoard().positionExists(p) && isThereOpponentPiece(p)){
             mat[p.getRows()][p.getColumns()] = true;
